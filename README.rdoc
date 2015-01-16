@@ -15,17 +15,20 @@ aptitude install build-essential
 Then compile the code:
 
 ./configure make all
+
 sudo make install
 
 The program will be installed as rtffilter.
 
+## Notes On MAC OSX
+
+You might need to install boost, so using homebrew:
+
+brew install boost
+
 == Bug reports
 
 If you discover a problem with rtf-filter, we would like to know about it.
-
-Our Issues Tracker is available here: 
-
-https://pscomputer.lighthouseapp.com/projects/87526-rtf-filter
 
 == License
 

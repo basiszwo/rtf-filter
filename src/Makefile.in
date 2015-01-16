@@ -161,9 +161,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-rtffilter_SOURCES = aux.cpp ccontrolword.cpp main.cpp rtf.cpp 
-rtffilter_LDFLAGS = -lboost_filesystem -lboost_program_options -ldl
-rtffilter_CXXFLAGS = -O2 
+rtffilter_SOURCES = aux.cpp ccontrolword.cpp main.cpp rtf.cpp
+rtffilter_LDFLAGS = -lboost_filesystem -lboost_program_options -ldl -lboost_system
+rtffilter_CXXFLAGS = -O2
 noinst_HEADERS = aux.h rtf.h ccontrolword.h
 all: all-am
 
@@ -236,7 +236,7 @@ uninstall-binPROGRAMS:
 
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
-rtffilter$(EXEEXT): $(rtffilter_OBJECTS) $(rtffilter_DEPENDENCIES) 
+rtffilter$(EXEEXT): $(rtffilter_OBJECTS) $(rtffilter_DEPENDENCIES)
 	@rm -f rtffilter$(EXEEXT)
 	$(rtffilter_LINK) $(rtffilter_OBJECTS) $(rtffilter_LDADD) $(LIBS)
 
