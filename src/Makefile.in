@@ -53,7 +53,7 @@ am_rtffilter_OBJECTS = rtffilter-aux.$(OBJEXT) \
 rtffilter_OBJECTS = $(am_rtffilter_OBJECTS)
 rtffilter_LDADD = $(LDADD)
 rtffilter_LINK = $(CXXLD) $(rtffilter_CXXFLAGS) $(CXXFLAGS) \
-	$(rtffilter_LDFLAGS) $(LDFLAGS) -o $@
+	$(LDFLAGS) -o $@
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -61,8 +61,8 @@ am__mv = mv -f
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
 CXXLD = $(CXX)
-CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
-	-o $@
+CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) \
+	-o $@ $(AM_LDFLAGS) $(LDFLAGS)
 SOURCES = $(rtffilter_SOURCES)
 DIST_SOURCES = $(rtffilter_SOURCES)
 HEADERS = $(noinst_HEADERS)
@@ -238,7 +238,7 @@ clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
 rtffilter$(EXEEXT): $(rtffilter_OBJECTS) $(rtffilter_DEPENDENCIES)
 	@rm -f rtffilter$(EXEEXT)
-	$(rtffilter_LINK) $(rtffilter_OBJECTS) $(rtffilter_LDADD) $(LIBS)
+	$(rtffilter_LINK) $(rtffilter_OBJECTS) $(rtffilter_LDADD) $(LIBS) $(rtffilter_LDFLAGS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
