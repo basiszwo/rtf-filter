@@ -1,36 +1,40 @@
 
 rtf-filter reads a Rich Text Format (RTF) word processing file and outputs a plain text version with only line breaks and whitespace as formatting.
 
-== Installation
+## Installation
 
 Ensure boost development libraries are installed.  E.g. on Debian...
 
-aptitude install libboost-program-options-dev
-aptitude install libboost-filesystem-dev
+`apt-get install libboost-program-options-dev`
+`apt-get install libboost-filesystem-dev`
 
 And the C++ toolchain:
 
-aptitude install build-essential
+`apt-get install build-essential`
 
 Then compile the code:
 
-./configure make all
-
-sudo make install
+```
+./configure 
+make
+make install
+```
 
 The program will be installed as rtffilter.
 
 ## Notes On MAC OSX
 
+
+
 You might need to install boost, so using homebrew:
 
-brew install boost
+`brew install boost`
 
-== Bug reports
+## Bug reports
 
 If you discover a problem with rtf-filter, we would like to know about it.
 
-== License
+## License
 
 COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0
 Copyright PS Computer Services Ltd 2003-2011
